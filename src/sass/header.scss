@@ -1,0 +1,47 @@
+.app-header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    border-width: 0;
+    border-radius: 0;
+    z-index: 1025;
+    @at-root{
+        .navbar-header {
+            color: #7793a7;
+            background-color: #1c2b36;
+            button {
+                padding: 10px 17px;
+                font-size: 16px;
+                line-height: 30px;
+                text-decoration: none;
+                border: none;
+                background-color: #131e26;
+            }
+        }
+        .navbar-brand {
+            color: #c4d0d9;
+            &:hover,&:active{
+                color: #c4d0d9;
+            }
+        }
+        .navbar-collapse{
+            background-color: #fff;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+        }
+        @media (min-width: 768px){
+            .navbar-header{
+                position: fixed;
+                float: left;
+            }
+            .navbar-header {
+                width: $leftWidth;
+            }
+            .navbar-collapse, .app-content, .app-footer {
+                margin-left: $leftWidth;
+            }
+            
+        }
+
+    }
+}

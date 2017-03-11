@@ -1,0 +1,30 @@
+<div class="aside-wrap">
+	<div class="nav-wrap">
+		<div class="line"></div>
+		<ul class="nav" ng-repeat="nav in navNode track by $index">
+			<li ui-sref-active="active" ui-nav-dir hasSecond="{{menu.hasSecond}}" ng-repeat="menu in nav.menuNode">
+				<a href class="auto" ng-if="menu.hasSecond">
+					<span class="pull-right text-muted">
+				        <i class="fa fa-fw fa-angle-right text"></i>
+				        <i class="fa fa-fw fa-angle-down text-active"></i>
+			      </span>
+					<i class="glyphicon {{menu.menuIcon}} {{menu.menuColor}}"></i>
+					<span class="font-bold" ng-bind="menu.menuName"></span>
+				</a>
+				<a ui-sref="{{menu.href}}" ng-if="!menu.hasSecond">
+					<i class="glyphicon {{menu.menuIcon}} {{menu.menuColor}}"></i>
+					<span class="font-bold" ng-bind="menu.menuName"></span>
+				</a>
+				<ul class="nav nav-sub dk" ng-if="menu.hasSecond">
+					<li ui-sref-active="active" ng-repeat="sub in menu.subNode">
+						<a ui-sref="{{sub.href}}">
+							<span ng-bind="sub.name"></span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li class="line" ng-if="$index != navNode.length-1"></li>
+		</ul>
+	</div>
+</div>
+

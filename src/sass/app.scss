@@ -1,0 +1,96 @@
+@import './global';
+@import './header';
+@import './aside';
+@import './butterbar';
+@import './note';
+@import './list';
+
+.app {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    padding-top: 50px;
+}
+.app-content {
+    height: 100%;
+}
+.app-content-body {
+    float: left;
+    width: 100%;
+    padding-bottom: 50px;
+}
+@media (max-width: 767px){
+    .app {
+        overflow-x: hidden;
+    }
+    
+}
+
+@media (min-width: 767px){
+    .app-aside-folded{
+        .app-aside,
+        .navbar-header,
+        .aside-wrap{
+            width: $leftActiveWidth;
+        }
+        .navbar-header{
+            span{
+                display: none;
+            }
+        }
+        .navbar-collapse,
+        .app-content,
+        .app-footer{
+            margin-left: $leftActiveWidth;
+        }
+        .nav-wrap{
+            width: $leftActiveWidth + 17px;
+            .nav > li > a{
+                padding: 0;
+                i{
+                    display: block;
+                    float: none;
+                    width: auto;
+                    margin: 0;
+                    font-size: 16px;
+                    line-height: 50px;
+                    border: none !important;
+                }
+            }
+            li > a span{
+                display: none;
+            }
+        }
+    }
+    .active .nav-sub, .app-aside-folded li:hover .nav-sub, .app-aside-folded li:focus .nav-sub, .app-aside-folded li:active .nav-sub {
+        height: auto !important;
+        margin-left: 0;
+        overflow: auto;
+        opacity: 1;
+    }
+    .app-aside-folded .app-aside {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        z-index: 1010;
+    }
+    .app-aside-folded .app-aside > ul.nav {
+        position: fixed;
+        left: 80px;
+        z-index: 1010;
+        display: block;
+        width: 200px;
+        height: auto;
+        overflow: visible;
+        overflow-y: auto;
+        opacity: 1;
+        -webkit-overflow-scrolling: touch;
+        a{
+            color: #fff;
+            &:hover{
+                 background-color: #16232d;
+            }
+        }
+    }
+}

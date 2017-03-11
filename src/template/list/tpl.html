@@ -1,0 +1,47 @@
+<div class="hbox hbox-auto-xs bg-light ">
+	<div class="col w-lg lt b-r">
+		<div class="vbox">
+			<div class="wrapper">
+				<a ui-sref="main.note.modify" class="pull-right btn btn-info">新建笔记</a>
+				<div class="h4">Notes</div>
+			</div>
+			<div class="wrapper b-t m-t-xxs">
+				<div class="input-group">
+					<span class="input-group-addon input-sm"><i class="fa fa-search"></i></span>
+					<input type="text" class="form-control input-sm" placeholder="search" ng-model="list.query">
+				</div>
+			</div>
+			<div class="row-row">
+				<div class="cell scrollable hover">
+					<div class="cell-inner">
+						<div class="padder">
+							<div class="list-group">
+								<a ng-repeat="note in list.notes | filter: list.query | orderBy: ['date']:true " class="list-group-item b-l-{{note.color}} b-l-3x hover-anchor" ng-class="{'hover': note.selected }" ng-click="list.selectNote(note)">
+									<span ng-click='deleteNote(note)' class="pull-right text-muted hover-action"><i class="fa fa-times"></i></span>
+									<span class="block text-ellipsis">{{ note.heading }}</span>
+									<small class="text-muted">{{ note.date | date:'yyyy-MM-dd H:mm' }}</small>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col">
+		<div class="vbox">
+			<div class="wrapper bg-light lt b-b">
+				<span class="text-muted">Created on:</span> <span>{{ list.note.date  | date:'yyyy-MM-dd H:mm' }}</span>
+				<h3 ng-bind="list.note.heading"></h3>
+			</div>
+			<div class="row-row">
+				<div class="cell">
+					<div class="cell-inner">
+						<div class="form-control no-radius no-border no-bg wrapper-lg text-md" style="height:100%;" ng-bind-html="list.note.html | trustFilter">
+            			</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

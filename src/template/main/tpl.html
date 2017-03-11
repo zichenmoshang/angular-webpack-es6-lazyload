@@ -1,0 +1,8 @@
+<header ng-include = "'tpl/header.html'" class="app-header navbar" ng-controller="headCtrl"></header>
+
+<aside class="app-aside" ng-include="'tpl/aside.html'" ng-controller="asideCtrl"></aside>
+
+<div class="app-content">
+	<div ui-butterbar></div>
+	<div class="app-content-body fade-in-up" ui-view></div>
+</div>

@@ -1,0 +1,54 @@
+.i-checks{
+    & > i{
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-top: -2px;
+        margin-right: 4px;
+        margin-left: -20px;
+        line-height: 1;
+        vertical-align: middle;
+        background-color: #fff;
+        border: 1px solid #cfdadd;
+        &:before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background-color: transparent;
+            content: "";
+            -webkit-transition: all 0.2s;
+            transition: all 0.2s;
+        }
+    }
+    input:checked + i{
+        border-color: #23b7e5;
+        &:before{
+            top: 4px;
+            left: 4px;
+            width: 10px;
+            height: 10px;
+            background-color: #23b7e5;
+        }
+    }
+    input[type="radio"] + i, input[type="radio"] + i:before {
+        border-radius: 50%;
+    }
+}
+
+.text-dir .textarea {
+    border-color: #cfdadd;
+    outline: 0;
+    min-height: 300px;
+    height: auto;
+    max-height: 600px;
+    overflow: auto;
+    padding: 10px;
+    &:focus{
+        border-color: #66afe9;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    }
+}
+
