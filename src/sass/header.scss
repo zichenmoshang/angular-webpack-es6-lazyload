@@ -33,14 +33,11 @@
             .navbar-header{
                 position: fixed;
                 float: left;
-            }
-            .navbar-header {
                 width: $leftWidth;
             }
-            .navbar-collapse, .app-content, .app-footer {
+            .navbar-collapse{
                 margin-left: $leftWidth;
             }
-            
         }
 
     }

@@ -8,7 +8,7 @@ module.exports = {
 	context: __dirname,
 	entry: {
 		app: './src/js/app.js',
-		vendor: ['angular','oclazyload','angular-ui-router']
+		vendor: ['angular','angular-ui-router']
 	},
 	output: {
 		path: path.resolve(__dirname,'asset'),

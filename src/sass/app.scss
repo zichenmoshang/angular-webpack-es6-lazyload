@@ -11,13 +11,14 @@
     height: auto;
     min-height: 100%;
     padding-top: 50px;
+    display: flex;
 }
 .app-content {
-    height: 100%;
+    display: flex;
+    flex: 1;
 }
 .app-content-body {
-    float: left;
-    width: 100%;
+    width: 100%; 
     padding-bottom: 50px;
 }
 @media (max-width: 767px){
@@ -40,8 +41,8 @@
             }
         }
         .navbar-collapse,
-        .app-content,
-        .app-footer{
+        .app-footer,
+        .app-content{
             margin-left: $leftActiveWidth;
         }
         .nav-wrap{

@@ -24,7 +24,8 @@ export default ($stateProvider,myRegisterProvider) => {
 		                	'../header/headCtrl',
 		                	'../aside/asideCtrl',
 		                	'../../js/directive/ui-toggleClass',
-		                	'../../js/directive/ui-nav'
+		                	'../../js/directive/ui-nav',
+		                	'../../js/directive/ui-butterbar'
 	                	], function() {
 	                	let arr = [];
 	                	//require 不能为变量
@@ -35,6 +36,7 @@ export default ($stateProvider,myRegisterProvider) => {
 						arr[4] = require('../aside/asideCtrl');
 						arr[5] = require('../../js/directive/ui-toggleClass');
 						arr[6] = require('../../js/directive/ui-nav');
+						arr[7] = require('../../js/directive/ui-butterbar');
 	                	myRegisterProvider.register(arr);
 	                    deferred.resolve();
 	                }, 'js/module/moduleMain');
