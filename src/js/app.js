@@ -1,6 +1,3 @@
-import 'bootstrap/dist/css/bootstrap';
-import 'font-awesome/css/font-awesome';
-import 'simple-line-icons/css/simple-line-icons';
 import '../sass/app.scss';
 
 import angular from 'angular';
