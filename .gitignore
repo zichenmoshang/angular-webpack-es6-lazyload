@@ -6,3 +6,4 @@ asset
 other.md
 webpack_cache
 .happypack
+.gitignore
